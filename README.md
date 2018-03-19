@@ -44,3 +44,19 @@ $ rosrun dialogui test_diag
 Once you have run the test program, you should have the window below. Each topics is in a different color and the identifier of each topics is displayed in bold just before the message.
 
 <img src="img/dialoGUI_test.png">
+
+## Troubles
+
+If you have the following error :
+
+```
+ Could not find a package configuration file provided by "qt_build" with any of the following names:
+
+    qt_buildConfig.cmake
+    qt_build-config.cmake
+```
+
+You just have to install qt-build:
+```
+$ sudo apt-get install ros-kinetic-qt-build
+```
