@@ -55,7 +55,6 @@ include_directories(
 )
 
 add_executable(test_diag src/test.cpp)
-add_dependencies(test_diag dialogui_gencpp)
 target_link_libraries(test_diag ${catkin_LIBRARIES})
 
 ##############################################################################
