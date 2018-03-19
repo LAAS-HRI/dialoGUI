@@ -29,6 +29,7 @@ private slots:
 
 signals:
     void MySignal(QString);
+    void ScrollBarSignal(int);
 
 private:
     Ui::dialoGUI *ui;

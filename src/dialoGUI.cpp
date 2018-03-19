@@ -1,7 +1,9 @@
 #include "include/dialoGUI.h"
 #include "ui_mainwindow.h"
+#include <QScrollBar>
 
 #include <string>
+#include <iostream>
 
 dialoGUI::dialoGUI(QWidget *parent) :
     QMainWindow(parent),
@@ -13,6 +15,7 @@ dialoGUI::dialoGUI(QWidget *parent) :
 
     QObject::connect(ui->cleanButton, SIGNAL(clicked()),this, SLOT(on_cleanButton_clicked()));
     QObject::connect( this, SIGNAL( MySignal(QString) ), ui->dialogue, SLOT( setHtml(QString) ) );
+    QObject::connect( this, SIGNAL( ScrollBarSignal(int) ), ui->dialogue->verticalScrollBar(), SLOT( setValue(int) ) );
 
     cpt = 0;
     colors.push_back("a40000");
@@ -78,6 +81,8 @@ void dialoGUI::newLine(std::string name, std::string text)
   std::string begin = prev.substr(0, prev.size() - std::string("</body></html>").size());
   prev = begin + text + "</body></html>";
   MySignal(QString::fromStdString(prev));
+  int max = ui->dialogue->verticalScrollBar()->maximum();
+  ScrollBarSignal(max);
 }
 
 void dialoGUI::addId(std::string name, std::string topic)
