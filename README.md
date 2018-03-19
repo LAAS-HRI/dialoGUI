@@ -10,7 +10,7 @@ To use it, simply overload the launch file provided in the launch folder.
 <launch>
 
   <include file="$(find dialogui)/launch/dialoGUI.launch">
-    <arg name="name" default="my dialog window" />
+    <arg name="name" default="my_dialog_window" />
   	<arg name="ids" default="id_1
                              id_2" />
   	<arg name="topics" default="id_1_topic
