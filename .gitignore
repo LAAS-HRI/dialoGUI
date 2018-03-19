@@ -35,5 +35,5 @@
 *.pro
 *.pro.user
 *.ui.autosave
-/build-ontoloGUI-Desktop-Debug
-/build-ontoloGUI-Desktop-Release
+/build-dialoGUI-Desktop-Debug
+/build-dialoGUI-Desktop-Release
