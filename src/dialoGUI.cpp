@@ -20,7 +20,7 @@ dialoGUI::dialoGUI(QWidget *parent) :
     cpt = 0;
     colors.push_back("a40000");
     colors.push_back("00a400");
-    colors.push_back("0000a4");
+    colors.push_back("5555d4");
     colors.push_back("a4a400");
     colors.push_back("a400a4");
     colors.push_back("00a4a4");
