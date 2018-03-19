@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 
     w.show();
 
-    ros::init(argc, argv, "dialoGUI");
+    ros::init(argc, argv, "dialoGUI", ros::init_options::AnonymousName);
 
     ros::NodeHandle n;
     w.init(&n);
