@@ -1,5 +1,5 @@
 <launch>
-  <arg name="name" default="dialogue"/>
+  <arg name="name" default="dialog"/>
   <arg name="ids" default="
   Martoni
   Odile
