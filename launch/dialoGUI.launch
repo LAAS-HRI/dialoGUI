@@ -1,0 +1,16 @@
+<launch>
+  <arg name="name" default="dialogue"/>
+  <arg name="ids" default="
+  Martoni
+  Odile
+  Kara
+  Simon
+  Commissaire"/>
+  <arg name="topics" default="
+  Martoni
+  Odile
+  Kara
+  Simon
+  Commissaire"/>
+  <node name="ontology_arguer" pkg="dialogui" type="dialoGUI" output="screen" args="$(arg name) $(arg ids) $(arg topics)"> </node>
+</launch>
