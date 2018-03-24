@@ -16,8 +16,6 @@ dialoGUI::dialoGUI(QWidget *parent) :
     QObject::connect(ui->cleanButton, SIGNAL(clicked()),this, SLOT(on_cleanButton_clicked()));
     QObject::connect( this, SIGNAL( MySignal(QString) ), ui->dialogue, SLOT( setHtml(QString) ) );
     QObject::connect( this, SIGNAL( ScrollBarSignal(int) ), ui->dialogue->verticalScrollBar(), SLOT( setValue(int) ) );
-    QObject::connect( ui->dialogue->verticalScrollBar(), SIGNAL(rangeChanged(int, int)), this, SLOT( on_range_Changed(int, int) ));
-
 
     cpt = 0;
     colors.push_back("a40000");
@@ -58,14 +56,6 @@ void dialoGUI::on_cleanButton_clicked()
 {
     ui->dialogue->clear();
     setInitText();
-}
-
-void dialoGUI::on_range_Changed(int min, int max)
-{
-  /*if(max != 0)
-    while(ui->dialogue->verticalScrollBar()->value() != max)
-      ScrollBarSignal(max);*/
-
 }
 
 void dialoGUI::setInitText()

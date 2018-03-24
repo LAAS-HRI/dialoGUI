@@ -25,7 +25,6 @@ public:
 
 private slots:
     void on_cleanButton_clicked();
-    void on_range_Changed(int min, int max);
 
 signals:
     void MySignal(QString);
