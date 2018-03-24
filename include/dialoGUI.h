@@ -17,7 +17,6 @@ class dialoGUI : public QMainWindow, public DialogueSubscriber_callback
   Q_OBJECT
 public:
     explicit dialoGUI(QWidget *parent = 0);
-    void messageCallback(const std_msgs::String::ConstPtr& msg);
     ~dialoGUI();
 
     void addId(std::string name, std::string topic);

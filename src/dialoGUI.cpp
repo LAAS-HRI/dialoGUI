@@ -46,13 +46,6 @@ dialoGUI::dialoGUI(QWidget *parent) :
     setInitText();
 }
 
-void dialoGUI::messageCallback(const std_msgs::String::ConstPtr& msg)
-{
-  std::cout << msg->data << std::endl;
-  std::string html = "test";
-  newLine("ok" , html);
-}
-
 dialoGUI::~dialoGUI()
 {
   for(int i = 0; i < subscribers.size(); i++)
@@ -90,7 +83,6 @@ void dialoGUI::newLine(std::string name, std::string text)
 {
   std::string prev = ui->dialogue->toHtml().toStdString();
   std::string begin = prev.substr(0, prev.size() - std::string("<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /><br /><br /></p></body></html>").size());
-  std::cout << begin << std::endl;
   prev = begin + text + "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /><br /><br /></p></body></html>";
   MySignal(QString::fromStdString(prev));
   int max = ui->dialogue->verticalScrollBar()->maximum();
