@@ -60,20 +60,21 @@ void dialoGUI::on_cleanButton_clicked()
 
 void dialoGUI::setInitText()
 {
-    QString html = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">"
+    html_ = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">"
                     "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">"
                     "p, li { white-space: pre-wrap; }"
                     "</style></head><body style=\" font-family:'Noto Sans'; font-size:9pt; font-weight:400; font-style:normal;\">"
                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /><br /><br /></p>"
                     "</body></html>";
-    ui->dialogue->setHtml(html);
+    ui->dialogue->setHtml(QString::fromStdString(html_));
 }
 
 void dialoGUI::newLine(std::string name, std::string text)
 {
-  std::string prev = ui->dialogue->toHtml().toStdString();
+  std::string prev = html_;//ui->dialogue->toHtml().toStdString();
   std::string begin = prev.substr(0, prev.size() - std::string("<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /><br /><br /></p></body></html>").size());
   prev = begin + text + "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /><br /><br /></p></body></html>";
+  html_ = prev;
   MySignal(QString::fromStdString(prev));
   int max = ui->dialogue->verticalScrollBar()->maximum();
   while(ui->dialogue->verticalScrollBar()->value() != max)

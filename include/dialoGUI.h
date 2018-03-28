@@ -40,6 +40,8 @@ private:
     ros::NodeHandle* n_;
     ros::Subscriber sub;
 
+    std::string html_;
+
     void setInitText();
     void newLine(std::string name, std::string text);
 };
