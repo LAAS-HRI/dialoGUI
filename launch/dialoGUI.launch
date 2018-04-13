@@ -12,5 +12,5 @@
   Kara
   Simon
   Commissaire"/>
-  <node name="ontology_arguer" pkg="dialogui" type="dialoGUI" output="screen" args="$(arg name) $(arg ids) $(arg topics)"> </node>
+  <node name="dialogui_node" pkg="dialogui" type="dialoGUI" output="screen" args="$(arg name) $(arg ids) $(arg topics)"> </node>
 </launch>
