@@ -1,5 +1,7 @@
 <launch>
   <arg name="name" default="dialog"/>
+  <arg name="width" default="540"/>
+  <arg name="height" default="430"/>
   <arg name="ids" default="
   Martoni
   Odile
@@ -12,5 +14,5 @@
   Kara
   Simon
   Commissaire"/>
-  <node name="dialogui_node" pkg="dialogui" type="dialoGUI" output="screen" args="$(arg name) $(arg ids) $(arg topics)"> </node>
+  <node name="dialogui_node" pkg="dialogui" type="dialoGUI" output="screen" args="$(arg name) $(arg width) $(arg height) $(arg ids) $(arg topics)"> </node>
 </launch>
